@@ -3,8 +3,11 @@ repos:
     rev: v4.4.0
     hooks:
       - id: check-yaml
+        exclude: ^static/
       - id: end-of-file-fixer
+        exclude: ^static/
       - id: trailing-whitespace
+        exclude: ^static/
   - repo: local
     hooks:
       - id: pylint
@@ -13,7 +16,7 @@ repos:
         language: script
         types:
           - python
-        exclude: ^alembic/
+        exclude: ^static/
         args:
           - pylint
           - -v
