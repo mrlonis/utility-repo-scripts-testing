@@ -3,27 +3,18 @@ repos:
     rev: v4.4.0
     hooks:
       - id: check-yaml
-        exclude: ^static/
       - id: end-of-file-fixer
-        exclude: ^static/
       - id: trailing-whitespace
-        exclude: ^static/
   - repo: local
     hooks:
       - id: pylint
         name: pylint
         entry: utility-repo-scripts/ensure_venv.sh
         language: script
-        types:
-          - python
-        exclude: ^static/
-        args:
-          - pylint
-          - -v
-          - --rcfile=.pylintrc
+        types: [python]
+        args: [pylint, -v, --rcfile=.pylintrc]
   - repo: https://github.com/pycqa/flake8
     rev: 6.0.0
     hooks:
       - id: flake8
-        args:
-          - --config=.flake8
+        args: [--config=.flake8]
