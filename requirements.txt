@@ -1,6 +1,8 @@
 black
+configupdater
 flake8
 pre-commit
 pylint
 pyyaml
+ruamel.yaml
 tomli
